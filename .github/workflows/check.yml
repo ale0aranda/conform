@@ -1,0 +1,14 @@
+name: Check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    uses: ale0aranda/rules/.github/workflows/check.yml@main

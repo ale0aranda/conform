@@ -1,0 +1,62 @@
+{
+	"name": "@ale0aranda/conform",
+	"version": "0.1.0",
+	"description": "CLI to verify whether a project conforms to Alejandro Aranda's development standards.",
+	"type": "module",
+	"license": "MIT",
+	"author": "Alejandro Aranda",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ale0aranda/conform.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ale0aranda/conform/issues"
+	},
+	"homepage": "https://github.com/ale0aranda/conform#readme",
+	"keywords": [
+		"cli",
+		"code-quality",
+		"conventions",
+		"developer-tools",
+		"repository",
+		"standards"
+	],
+	"bin": {
+		"conform": "./dist/cli.js"
+	},
+	"files": [
+		"dist",
+		"LICENSE",
+		"README.md"
+	],
+	"scripts": {
+		"build": "tsup",
+		"check": "pnpm check:biome && pnpm check:types && pnpm test",
+		"check:biome": "biome ci .",
+		"check:types": "tsc --noEmit",
+		"dev": "tsup --watch",
+		"format": "biome check --write .",
+		"test": "vitest run --passWithNoTests",
+		"test:watch": "vitest",
+		"prepack": "pnpm check && pnpm build"
+	},
+	"engines": {
+		"node": ">=22.13.0"
+	},
+	"publishConfig": {
+		"access": "public",
+		"provenance": true
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.12",
+		"@types/node": "^26.4.1",
+		"tsup": "^8.5.1",
+		"typescript": "^7.0.2",
+		"vitest": "^5.0.0"
+	},
+	"packageManager": "pnpm@11.19.0",
+	"dependencies": {
+		"@ale0aranda/rules": "^0.6.2",
+		"picocolors": "^1.1.1"
+	}
+}
