@@ -8,12 +8,14 @@ export const checkBiome: Check = async ({ cwd }) => {
 		await access(join(cwd, "biome.json"));
 
 		return {
+			id: "biome",
 			name: "Biome",
 			status: "pass",
 			message: "Biome configuration detected",
 		};
 	} catch {
 		return {
+			id: "biome",
 			name: "Biome",
 			status: "fail",
 			message: "Biome configuration is missing",

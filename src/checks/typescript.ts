@@ -8,12 +8,14 @@ export const checkTypeScript: Check = async ({ cwd }) => {
 		await access(join(cwd, "tsconfig.json"));
 
 		return {
+			id: "typescript",
 			name: "TypeScript",
 			status: "pass",
 			message: "TypeScript configuration detected",
 		};
 	} catch {
 		return {
+			id: "typescript",
 			name: "TypeScript",
 			status: "fail",
 			message: "TypeScript configuration is missing",

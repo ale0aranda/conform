@@ -10,12 +10,14 @@ export const checkPackageJson: Check = async ({ cwd }) => {
 		await access(packageJsonPath);
 
 		return {
+			id: "package-json",
 			name: "package.json",
 			status: "pass",
 			message: "Project manifest detected",
 		};
 	} catch {
 		return {
+			id: "package-json",
 			name: "package.json",
 			status: "fail",
 			message: "Project manifest is missing",

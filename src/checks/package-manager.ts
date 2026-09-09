@@ -8,12 +8,14 @@ export const checkPackageManager: Check = async ({ cwd }) => {
 		await access(join(cwd, "pnpm-lock.yaml"));
 
 		return {
+			id: "package-manager",
 			name: "pnpm",
 			status: "pass",
 			message: "pnpm workspace detected",
 		};
 	} catch {
 		return {
+			id: "package-manager",
 			name: "pnpm",
 			status: "fail",
 			message: "pnpm lockfile is missing",

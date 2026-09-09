@@ -34,10 +34,13 @@
 		"check": "pnpm check:biome && pnpm check:types && pnpm test",
 		"check:biome": "biome ci .",
 		"check:types": "tsc --noEmit",
+		"changeset": "changeset",
 		"dev": "tsup --watch",
 		"format": "biome check --write .",
+		"release": "changeset publish",
 		"test": "vitest run --passWithNoTests",
 		"test:watch": "vitest",
+		"version": "changeset version",
 		"prepack": "pnpm check && pnpm build"
 	},
 	"engines": {
@@ -48,6 +51,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.12",
+		"@changesets/cli": "^3.0.2",
 		"@types/node": "^26.4.1",
 		"tsup": "^8.5.1",
 		"typescript": "^7.0.2",
